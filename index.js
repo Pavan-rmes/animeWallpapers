@@ -159,12 +159,16 @@ function changedAnimeName(){
 
 function changeWallPaper(animeImages){
 	wallpapers.innerHTML=""
-	animeImages.map((img)=>wallpapers.innerHTML = wallpapers.innerHTML+
-	`<div class="wallPaper">
-	<img src=${img} alt="#" />
-	<a href=${img} download>
-	<button type="button" class="btn btn-outline-secondary" style="margin-top: auto;">Download</button>
-	</a>
-	</div>`)
+	animeImages.map((img,id)=>{
+		if(id<30){
+			wallpapers.innerHTML = wallpapers.innerHTML+
+			`<div class="wallPaper">
+			<img src=${img} alt="#" />
+			<a href=${img} download>
+			<button type="button" class="btn btn-outline-secondary" style="margin-top: auto;">Download</button>
+			</a>
+			</div>`
+				}
+	})
 }
 changeWallPaper(animeImages)
